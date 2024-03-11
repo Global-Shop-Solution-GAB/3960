@@ -1,0 +1,1490 @@
+Program.Sub.ScreenSU.Start
+gui.Form1..create
+gui.Form1..caption("Labor Detail Report Criteria")
+gui.Form1..size(6555,3450)
+gui.Form1..minx(0)
+gui.Form1..miny(0)
+gui.Form1..position(0,0)
+gui.Form1..event(unload,form1_unload)
+gui.Form1..alwaysontop(False)
+gui.Form1..fontname("Arial")
+gui.Form1..fontsize(8)
+gui.Form1..forecolor(0)
+gui.Form1..fontstyle(False,False,False,False,)
+gui.Form1..BackColor(-2147483633)
+gui.Form1..controlbox(True)
+gui.Form1..maxbutton(True)
+gui.Form1..minbutton(True)
+gui.Form1..mousepointer(0)
+gui.Form1..moveable(True)
+gui.Form1..sizeable(False)
+gui.Form1..ShowInTaskBar(True)
+gui.Form1..titlebar(True)
+gui.Form1.txtWO.create(textbox,"",True,1185,300,0,200,300,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtWO.defaultvalue("")
+gui.Form1.txtWO.controlgroup(0)
+gui.Form1.lbl1.create(label,"Ending Job",True,1935,255,1,2400,100,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl1.defaultvalue("")
+gui.Form1.lbl1.controlgroup(0)
+gui.Form1.txtSeq.create(textbox,"",True,474,300,0,1400,300,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtSeq.event(lostfocus,txtseq_lostfocus)
+gui.Form1.txtSeq.defaultvalue("")
+gui.Form1.txtSeq.controlgroup(0)
+gui.Form1.lbl2.create(label,"Suf",True,567,243,1,1400,100,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl2.defaultvalue("")
+gui.Form1.lbl2.controlgroup(0)
+gui.Form1.txtEmp.create(textbox,"",True,1692,300,0,200,800,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEmp.event(lostfocus,txtemp_lostfocus)
+gui.Form1.txtEmp.defaultvalue("")
+gui.Form1.txtEmp.controlgroup(0)
+gui.Form1.lbl3.create(label,"Beginning Employee",True,1935,255,1,200,600,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl3.defaultvalue("")
+gui.Form1.lbl3.controlgroup(0)
+gui.Form1.txtWC.create(textbox,"",True,1674,300,0,200,1300,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtWC.event(lostfocus,txtwc_lostfocus)
+gui.Form1.txtWC.defaultvalue("")
+gui.Form1.txtWC.controlgroup(0)
+gui.Form1.lbl4.create(label,"Beginning WC",True,1935,255,1,200,1100,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl4.defaultvalue("")
+gui.Form1.lbl4.controlgroup(0)
+gui.Form1.datepicker1.create(datepicker)
+gui.Form1.datepicker1.visible(True)
+gui.Form1.datepicker1.size(1707,273)
+gui.Form1.datepicker1.zorder(0)
+gui.Form1.datepicker1.position(200,1900)
+gui.Form1.datepicker1.enabled(True)
+gui.Form1.datepicker1.checkbox(False)
+gui.Form1.datepicker1.event(lostfocus,datepicker1_lostfocus)
+gui.Form1.datepicker1.defaultvalue("")
+gui.Form1.datepicker1.controlgroup(0)
+gui.Form1.datepicker2.create(datepicker)
+gui.Form1.datepicker2.visible(True)
+gui.Form1.datepicker2.size(1707,285)
+gui.Form1.datepicker2.zorder(0)
+gui.Form1.datepicker2.position(2400,1900)
+gui.Form1.datepicker2.enabled(True)
+gui.Form1.datepicker2.checkbox(False)
+gui.Form1.datepicker2.defaultvalue("")
+gui.Form1.datepicker2.controlgroup(0)
+gui.Form1.lbl5.create(label,"Beginning Date",True,1263,255,1,200,1700,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl5.defaultvalue("")
+gui.Form1.lbl5.controlgroup(0)
+gui.Form1.lbl6.create(label,"Ending Date",True,1935,255,1,2400,1700,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl6.defaultvalue("")
+gui.Form1.lbl6.controlgroup(0)
+gui.Form1.cmdRun.create(button)
+gui.Form1.cmdRun.caption("Print")
+gui.Form1.cmdRun.visible(True)
+gui.Form1.cmdRun.size(1000,375)
+gui.Form1.cmdRun.zorder(0)
+gui.Form1.cmdRun.position(200,2300)
+gui.Form1.cmdRun.enabled(True)
+gui.Form1.cmdRun.fontname("Arial")
+gui.Form1.cmdRun.fontsize(8)
+gui.Form1.cmdRun.event(click,Print)
+gui.Form1.cmdRun.defaultvalue("")
+gui.Form1.cmdRun.controlgroup(0)
+gui.Form1.cmdWOBrws.create(button)
+gui.Form1.cmdWOBrws.caption("^")
+gui.Form1.cmdWOBrws.visible(True)
+gui.Form1.cmdWOBrws.size(399,363)
+gui.Form1.cmdWOBrws.zorder(0)
+gui.Form1.cmdWOBrws.position(1900,300)
+gui.Form1.cmdWOBrws.enabled(True)
+gui.Form1.cmdWOBrws.fontname("Arial")
+gui.Form1.cmdWOBrws.fontsize(8)
+gui.Form1.cmdWOBrws.event(click,cmdwobrowse_click)
+gui.Form1.cmdWOBrws.defaultvalue("")
+gui.Form1.cmdWOBrws.controlgroup(0)
+gui.Form1.cmdEmpBrws.create(button)
+gui.Form1.cmdEmpBrws.caption("^")
+gui.Form1.cmdEmpBrws.visible(True)
+gui.Form1.cmdEmpBrws.size(399,351)
+gui.Form1.cmdEmpBrws.zorder(0)
+gui.Form1.cmdEmpBrws.position(1900,800)
+gui.Form1.cmdEmpBrws.enabled(True)
+gui.Form1.cmdEmpBrws.fontname("Arial")
+gui.Form1.cmdEmpBrws.fontsize(8)
+gui.Form1.cmdEmpBrws.event(click,cmdempbrws_click)
+gui.Form1.cmdEmpBrws.defaultvalue("")
+gui.Form1.cmdEmpBrws.controlgroup(0)
+gui.Form1.cmdWCBrws.create(button)
+gui.Form1.cmdWCBrws.caption("^")
+gui.Form1.cmdWCBrws.visible(True)
+gui.Form1.cmdWCBrws.size(411,315)
+gui.Form1.cmdWCBrws.zorder(0)
+gui.Form1.cmdWCBrws.position(1900,1300)
+gui.Form1.cmdWCBrws.enabled(True)
+gui.Form1.cmdWCBrws.fontname("Arial")
+gui.Form1.cmdWCBrws.fontsize(8)
+gui.Form1.cmdWCBrws.event(click,cmdwcbrws_click)
+gui.Form1.cmdWCBrws.defaultvalue("")
+gui.Form1.cmdWCBrws.controlgroup(0)
+gui.Form1.chkAllDates.create(checkbox)
+gui.Form1.chkAllDates.caption("All Dates")
+gui.Form1.chkAllDates.visible(True)
+gui.Form1.chkAllDates.size(1935,255)
+gui.Form1.chkAllDates.zorder(0)
+gui.Form1.chkAllDates.position(4600,1900)
+gui.Form1.chkAllDates.enabled(True)
+gui.Form1.chkAllDates.alignment(0)
+gui.Form1.chkAllDates.fontname("Arial")
+gui.Form1.chkAllDates.fontsize(8)
+gui.Form1.chkAllDates.event(click,chkalldates_click)
+gui.Form1.chkAllDates.defaultvalue("")
+gui.Form1.chkAllDates.controlgroup(0)
+gui.Form1.txtEndJob.create(textbox,"",True,1185,300,0,2400,300,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndJob.defaultvalue("")
+gui.Form1.txtEndJob.controlgroup(0)
+gui.Form1.txtEndSuf.create(textbox,"",True,474,300,0,3600,300,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndSuf.event(lostfocus,txtendsuf_lostfocus)
+gui.Form1.txtEndSuf.defaultvalue("")
+gui.Form1.txtEndSuf.controlgroup(0)
+gui.Form1.cmdBrwsEndJob.create(button)
+gui.Form1.cmdBrwsEndJob.caption("^")
+gui.Form1.cmdBrwsEndJob.visible(True)
+gui.Form1.cmdBrwsEndJob.size(399,363)
+gui.Form1.cmdBrwsEndJob.zorder(0)
+gui.Form1.cmdBrwsEndJob.position(4100,300)
+gui.Form1.cmdBrwsEndJob.enabled(True)
+gui.Form1.cmdBrwsEndJob.fontname("Arial")
+gui.Form1.cmdBrwsEndJob.fontsize(8)
+gui.Form1.cmdBrwsEndJob.event(click,cmdbrwsendjob_click)
+gui.Form1.cmdBrwsEndJob.defaultvalue("")
+gui.Form1.cmdBrwsEndJob.controlgroup(0)
+gui.Form1.txtEndEmp.create(textbox,"",True,1692,330,0,2405,800,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndEmp.event(lostfocus,txtendemp_lostfocus)
+gui.Form1.txtEndEmp.defaultvalue("")
+gui.Form1.txtEndEmp.controlgroup(0)
+gui.Form1.cmdEndEmployee.create(button)
+gui.Form1.cmdEndEmployee.caption("^")
+gui.Form1.cmdEndEmployee.visible(True)
+gui.Form1.cmdEndEmployee.size(399,351)
+gui.Form1.cmdEndEmployee.zorder(0)
+gui.Form1.cmdEndEmployee.position(4100,800)
+gui.Form1.cmdEndEmployee.enabled(True)
+gui.Form1.cmdEndEmployee.fontname("Arial")
+gui.Form1.cmdEndEmployee.fontsize(8)
+gui.Form1.cmdEndEmployee.event(click,cmdendemployee_click)
+gui.Form1.cmdEndEmployee.defaultvalue("")
+gui.Form1.cmdEndEmployee.controlgroup(0)
+gui.Form1.cmdEndWC.create(button)
+gui.Form1.cmdEndWC.caption("^")
+gui.Form1.cmdEndWC.visible(True)
+gui.Form1.cmdEndWC.size(399,351)
+gui.Form1.cmdEndWC.zorder(0)
+gui.Form1.cmdEndWC.position(4100,1300)
+gui.Form1.cmdEndWC.enabled(True)
+gui.Form1.cmdEndWC.fontname("Arial")
+gui.Form1.cmdEndWC.fontsize(8)
+gui.Form1.cmdEndWC.event(click,cmdendwc_click)
+gui.Form1.cmdEndWC.defaultvalue("")
+gui.Form1.cmdEndWC.controlgroup(0)
+gui.Form1.txtEndWC.create(textbox,"",True,1674,300,0,2400,1300,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndWC.event(lostfocus,txtendwc_lostfocus)
+gui.Form1.txtEndWC.defaultvalue("")
+gui.Form1.txtEndWC.controlgroup(0)
+gui.Form1.chkAllEmps.create(checkbox)
+gui.Form1.chkAllEmps.caption("All Employees")
+gui.Form1.chkAllEmps.visible(True)
+gui.Form1.chkAllEmps.size(1935,255)
+gui.Form1.chkAllEmps.zorder(0)
+gui.Form1.chkAllEmps.position(4600,900)
+gui.Form1.chkAllEmps.enabled(True)
+gui.Form1.chkAllEmps.alignment(0)
+gui.Form1.chkAllEmps.fontname("Arial")
+gui.Form1.chkAllEmps.fontsize(8)
+gui.Form1.chkAllEmps.event(click,chkallemps_click)
+gui.Form1.chkAllEmps.defaultvalue("")
+gui.Form1.chkAllEmps.controlgroup(0)
+gui.Form1.chkAllJobs.create(checkbox)
+gui.Form1.chkAllJobs.caption("All Work Orders")
+gui.Form1.chkAllJobs.visible(True)
+gui.Form1.chkAllJobs.size(1935,495)
+gui.Form1.chkAllJobs.zorder(0)
+gui.Form1.chkAllJobs.position(4600,300)
+gui.Form1.chkAllJobs.enabled(True)
+gui.Form1.chkAllJobs.alignment(0)
+gui.Form1.chkAllJobs.fontname("Arial")
+gui.Form1.chkAllJobs.fontsize(8)
+gui.Form1.chkAllJobs.event(click,chkalljobs_click)
+gui.Form1.chkAllJobs.defaultvalue("")
+gui.Form1.chkAllJobs.controlgroup(0)
+gui.Form1.chkAllWC.create(checkbox)
+gui.Form1.chkAllWC.caption("All Work Centers")
+gui.Form1.chkAllWC.visible(True)
+gui.Form1.chkAllWC.size(1935,255)
+gui.Form1.chkAllWC.zorder(0)
+gui.Form1.chkAllWC.position(4600,1400)
+gui.Form1.chkAllWC.enabled(True)
+gui.Form1.chkAllWC.alignment(0)
+gui.Form1.chkAllWC.fontname("Arial")
+gui.Form1.chkAllWC.fontsize(8)
+gui.Form1.chkAllWC.event(click,chkallwc_click)
+gui.Form1.chkAllWC.defaultvalue("")
+gui.Form1.chkAllWC.controlgroup(0)
+gui.Form1.lbl7.create(label,"Beginning Job",True,1935,255,1,200,100,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl7.defaultvalue("")
+gui.Form1.lbl7.controlgroup(0)
+gui.Form1.lbl8.create(label,"Suf",True,780,255,1,3600,100,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl8.defaultvalue("")
+gui.Form1.lbl8.controlgroup(0)
+gui.Form1.lbl9.create(label,"Ending Employee",True,1935,255,1,2400,600,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl9.defaultvalue("")
+gui.Form1.lbl9.controlgroup(0)
+gui.Form1.lbl10.create(label,"Ending WC",True,1935,255,1,2400,1100,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl10.defaultvalue("")
+gui.Form1.lbl10.controlgroup(0)
+gui.Form1.cmdClear.create(button)
+gui.Form1.cmdClear.caption("Clear")
+gui.Form1.cmdClear.visible(True)
+gui.Form1.cmdClear.size(1000,375)
+gui.Form1.cmdClear.zorder(0)
+gui.Form1.cmdClear.position(1500,2300)
+gui.Form1.cmdClear.enabled(True)
+gui.Form1.cmdClear.fontname("Arial")
+gui.Form1.cmdClear.fontsize(8)
+gui.Form1.cmdClear.event(click,cmdclear_click)
+gui.Form1.cmdClear.defaultvalue("")
+gui.Form1.cmdClear.controlgroup(0)
+gui.Form1.txtWO.tabstop(True)
+gui.Form1.txtWO.tabindex(1)
+gui.Form1.txtSeq.tabstop(True)
+gui.Form1.txtSeq.tabindex(2)
+gui.Form1.txtEndJob.tabstop(True)
+gui.Form1.txtEndJob.tabindex(3)
+gui.Form1.txtEndSuf.tabstop(True)
+gui.Form1.txtEndSuf.tabindex(4)
+gui.Form1.chkAllJobs.tabstop(True)
+gui.Form1.chkAllJobs.tabindex(5)
+gui.Form1.txtEmp.tabstop(True)
+gui.Form1.txtEmp.tabindex(6)
+gui.Form1.txtEndEmp.tabstop(True)
+gui.Form1.txtEndEmp.tabindex(7)
+gui.Form1.chkAllEmps.tabstop(True)
+gui.Form1.chkAllEmps.tabindex(8)
+gui.Form1.txtWC.tabstop(True)
+gui.Form1.txtWC.tabindex(9)
+gui.Form1.txtEndWC.tabstop(True)
+gui.Form1.txtEndWC.tabindex(10)
+gui.Form1.chkAllWC.tabstop(True)
+gui.Form1.chkAllWC.tabindex(11)
+gui.Form1.datepicker1.tabstop(True)
+gui.Form1.datepicker1.tabindex(12)
+gui.Form1.datepicker2.tabstop(True)
+gui.Form1.datepicker2.tabindex(13)
+gui.Form1.chkAllDates.tabstop(True)
+gui.Form1.chkAllDates.tabindex(14)
+gui.Form1.cmdRun.tabstop(True)
+gui.Form1.cmdRun.tabindex(15)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.uReport.Define("SEQ",String,SEQ)
+Variable.UDT.uReport.Define("CHARGE_DATE",String,CHARGE_DATE)
+Variable.UDT.uReport.Define("AMT_OVERHEAD",String,AMT_OVERHEAD)
+Variable.UDT.uReport.Define("HOURS_WORKED",String,HOURS_WORKED)
+Variable.UDT.uReport.Define("AMT_LABOR",String,AMOUNT_LABOR)
+Variable.UDT.uReport.Define("EMP_WC",String,MACHINE)
+Variable.UDT.uReport.Define("BIRUNID",Long)
+Variable.UDT.uReport.Define("JobSuffix",String,JOBSUFFIX)
+Variable.uGlobal.uWOs.Declare("uReport")
+Variable.uGlobal.uWOHist.Declare("uReport")
+Variable.Global.iBILogID.Declare(Long,0)
+Variable.Global.iBIRunID.Declare(Long,0)
+Variable.Global.sDate.Declare(String)
+Variable.Global.eDate.Declare(String)
+Variable.Global.SJOBS.Declare(String)
+Variable.Global.SEMPWC.Declare(String)
+Variable.Global.sEorW.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded By:SFulsom
+'6/1/2014
+'UPDATED 10/14/14 added in ranges for jobs,wc's,employees, check all functions
+'Labor Detail Report for Work Orders Selection Criteria based on Date Range and Employee or Work Center
+
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'clear out BI Table
+F.ODBC.Connection!conX.Execute("DELETE from GCG_3960_BI_LBR_DTL")
+
+Gui.Form1..Show
+Gui.Form1.txtWO.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+program.sub.cmdwobrowse_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdwcbrws_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+Variable.Local.sTitles.Declare(String)
+Variable.Local.iWidths.Declare(Long)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+Function.Intrinsic.String.Split("Job*!*Suffix*!*Part*!*Description","*!*",V.Local.sTitles)
+Function.Intrinsic.String.Split("1000*!*800*!*2000*!*3000","*!*",V.Local.iWidths)
+F.Intrinsic.UI.Browser("Select a Job","conX","select distinct job,suffix,part,description from v_job_header union select distinct job,suffix,part,description from v_job_hist_mast",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtWO.Text(V.Local.sRet(0).Trim)
+	Gui.Form1.txtSeq.Text(V.Local.sRet(1).Trim)
+	Gui.Form1.txtEndJob.Text(V.Local.sRet(0).Trim)
+	Gui.Form1.txtEndSuf.Text(V.Local.sRet(1).Trim)
+	Gui.Form1.txtEndJob.SetFocus
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdwcbrws_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdwobrowse_click.end
+
+program.sub.cmdempbrws_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdempbrws_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+Function.Intrinsic.UI.Browser(50,,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+'F.Intrinsic.Debug.Stop
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtWC.Text("")
+	Gui.Form1.txtendwc.Text("")
+	Gui.Form1.txtEmp.Text(V.Local.sRet(0).Trim)
+	Gui.Form1.txtEndEmp.Text(V.Local.sRet(0).Trim)
+	Gui.Form1.txtEndEmp.SetFocus
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdempbrws_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdempbrws_click.end
+
+program.sub.cmdwcbrws_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdwcbrws_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+Function.Intrinsic.UI.Browser(400,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	Gui.Form1.txtEmp.Text("")
+	Gui.Form1.txtEndEmp.Text("")
+	Gui.Form1.txtWC.Text(V.Local.sRet(0).Trim)
+	Gui.Form1.txtEndWC.Text(V.Local.sRet(0).Trim)
+	Gui.Form1.txtEndWC.SetFocus
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdwcbrws_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdwcbrws_click.end
+
+Program.Sub.Unload.Start
+'End program
+F.Intrinsic.Control.End
+
+
+Program.Sub.Unload.End
+
+program.sub.form1_unload.start
+F.Intrinsic.Control.CallSub(Unload)
+
+program.sub.form1_unload.end
+
+program.sub.chkalldates_click.start
+F.Intrinsic.Control.SetErrorHandler("chkalldates_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDates.Value,=,1)
+	Gui.Form1.datepicker1.Enabled(false)
+	Gui.Form1.datepicker2.Enabled(false)
+F.Intrinsic.Control.Else
+	Gui.Form1.datepicker1.Enabled(true)
+	Gui.Form1.datepicker2.Enabled(true)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkalldates_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chkalldates_click.end
+
+Program.Sub.Print.Start
+F.Intrinsic.Control.SetErrorHandler("Print_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.sSql.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sDate.Declare(String)
+V.Local.eDate.Declare(String)
+V.Local.sBJobSuf.Declare(String)
+V.Local.sEJobSuf.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuf.Declare(String)
+
+'F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllJobs.Value,=,0)
+	V.Local.sJob.Set(V.Screen.Form1!txtWO.Text)
+	V.Local.sSuf.Set(V.Screen.Form1!txtSeq.Text)
+	F.Intrinsic.String.Concat(V.Local.sJob.Trim,"-",V.Local.sSuf.Trim,V.Local.sBJobSuf)
+
+	V.Local.sJob.Set(V.Screen.Form1!txtEndJob.Text)
+	V.Local.sSuf.Set(V.Screen.Form1!txtEndSuf.Text)
+	F.Intrinsic.String.Concat(V.Local.sJob.Trim,"-",V.Local.sSuf.Trim,V.Local.sEJobSuf)
+
+	F.Intrinsic.String.Concat("Jobs:",V.Local.sBJobSuf.Trim," thru ",V.Local.sEJobSuf,V.Global.SJOBS)
+F.Intrinsic.Control.Else
+	V.Global.SJOBS.Set("All Work Orders")
+F.Intrinsic.Control.EndIf
+
+'set title to All Emps or WC and set suppression parameters for crystal, if "W" then suppress employee name, if "E" then suppress WC
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllEmps.Value,=,1)
+	V.Global.SEMPWC.Set("All Employees")
+	V.Global.sEorW.Set("E")
+F.Intrinsic.Control.ElseIf(V.Screen.Form1!chkAllWC.Value,=,1)
+	V.Global.SEMPWC.Set("All Work Centers")
+	V.Global.sEorW.Set("W")
+F.Intrinsic.Control.EndIf
+
+'set report title range for WC/Emp suppression parameters for crystal, if "W" then suppress employee name, if "E" then suppress WC
+F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,"")
+	F.Intrinsic.String.Concat("Workcenters:",V.Screen.Form1!txtWC.Text," thru ",V.Screen.Form1!txtEndWC.Text,V.Global.SEMPWC)
+	V.Global.sEorW.Set("W")
+F.Intrinsic.Control.ElseIf(V.Screen.Form1!txtEmp.Text,<>,"")
+	F.Intrinsic.String.Concat("Employees:",V.Screen.Form1!txtEmp.Text," thru ",V.Screen.Form1!txtEndEmp.Text,V.Global.SEMPWC)
+	V.Global.sEorW.Set("E")
+F.Intrinsic.Control.EndIf
+
+'check to see if all dates is checked and setting start date and end date based on that selection for Crystal
+F.Intrinsic.control.If(V.Screen.Form1!chkAllDates.Value,=,1)
+	V.Global.sDate.Set("1/1/1900")
+	V.Global.eDate.Set("1/1/1900")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker1.Value,"mm/dd/yyyy",V.Global.sDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker2.Value,"mm/dd/yyyy",V.Global.eDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker1.Value,"YYYY-MM-DD",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker2.Value,"YYYY-MM-DD",V.Local.eDate)
+F.Intrinsic.Control.EndIf
+
+'check to make sure user makes selection
+F.Intrinsic.Control.If(V.Screen.Form1!txtWO.Text,=,"","AND",V.Screen.Form1!chkAllJobs.Value,=,0)
+	F.Intrinsic.UI.Msgbox("Must Select WO Range or Check 'All WorkOrders'","Invalid Work Order Selection",V.Local.iRet)
+	Gui.Form1..Show
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.control.EndIf
+
+F.Intrinsic.control.If(V.Screen.Form1!txtEmp.Text,=,"","AND",V.Screen.Form1!txtWC.Text,=,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllEmps.Value,=,0,"AND",V.Screen.Form1!chkAllWC.Value,=,0)
+	V.Local.sRet.Declare(String)
+	F.Intrinsic.String.Concat("No Employee or Work Center Range Selected, Must Select Employee or Work Center Range or Check 'All'",,V.Local.sRet)
+	F.Intrinsic.UI.Msgbox(V.Local.sRet,"Invalid Selection")
+	Gui.Form1..Show
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.Form1..Visible(false)
+F.Global.BI.GetRunID(V.Global.iBIRunID)
+F.Global.BI.startLogging(V.Global.iBIRunID,-1,-1,"",V.Global.iBILogID)
+
+V.uGlobal.uWOs.Redim(-1,-1)
+V.uGlobal.uWOHist.Redim(-1,-1)
+V.Local.i.Set(-1)
+
+'if all dates and all employees and all jobs checked
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!chkAllEmps.Value,=,1)
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,=,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"EMPL")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"EMPLOYEE")
+	F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL",,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.String.Concat("SELECT JOB + '-' + SUFFIX as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL",,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'ifall dates and all wc's and all jobs checked
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!chkAllWC.Value,=,1)
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,=,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"MACHINE")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"MACHINE")
+	F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL",,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL",,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'all dates checked,all WC checked, WO range selected
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!chkAllWC.Value,=,1)
+F.Intrinsic.Control.AndIf(V.Screen.Form1!txtWO.Text,<>,"")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"MACHINE")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"MACHINE")
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWO.Text,<>,V.Screen.Form1!txtEndJob.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix = '",V.Local.sBJobSuf,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWO.Text,<>,V.Screen.Form1!txtEndJob.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix = '",V.Local.sBJobSuf,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.if(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!chkAllEmps.Value,=,1)
+F.Intrinsic.Control.AndIf(V.Screen.Form1!txtWO.text,<>,"")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"EMPL")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"EMPLOYEE")
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT JOB + '-' + SUFFIX as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and EMPLOYEE BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and EMPL = '",V.Screen.Form1!txtEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'if wo range selected,wc range selected, date range selected
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDates.Value,=,0,"AND",V.Screen.Form1!txtWC.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!txtWO.text,<>,"")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"MACHINE")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"MACHINE")
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text,"AND",V.Screen.Form1!txtWO.Text,<>,V.Screen.Form1!txtEndJob.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE between '",V.Screen.Form1!txtWC.Text,"' and '",V.Screen.Form1!txtEndWC.Text,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"'",V.Local.sSql)
+	F.Intrinsic.Control.Elseif(V.Screen.Form1!txtWO.Text,<>,V.Screen.Form1!txtEndJob.Text,"AND",V.Screen.Form1!txtWC.Text,=,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE ='",V.Screen.Form1!txtWC.Text,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"'",V.Local.sSql)
+	F.Intrinsic.Control.Elseif(V.Screen.Form1!txtWO.Text,=,V.Screen.Form1!txtEndJob.Text,"AND",V.Screen.Form1!txtWC.Text,=,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix = '",V.Local.sBJobSuf,"' and MACHINE='",V.Screen.Form1!txtWC.Text,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"'",V.Local.sSql)
+	F.Intrinsic.Control.ElseIf(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text,"AND",V.Screen.Form1!txtWO.Text,=,V.Screen.Form1!txtEndJob.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix = '",V.Local.sBJobSuf,"' and MACHINE between '",V.Screen.Form1!txtWC.Text,"' and '",V.Screen.Form1!txtEndWC.Text,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"'",V.Local.sSql)
+	
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text,"AND",V.Screen.Form1!txtWO.Text,<>,V.Screen.Form1!txtEndJob.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE between '",V.Screen.Form1!txtWC.Text,"' and '",V.Screen.Form1!txtEndWC.Text,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"'",V.Local.sSql)
+	F.Intrinsic.Control.Elseif(V.Screen.Form1!txtWO.Text,<>,V.Screen.Form1!txtEndJob.Text,"AND",V.Screen.Form1!txtWC.Text,=,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE ='",V.Screen.Form1!txtWC.Text,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"'",V.Local.sSql)
+	F.Intrinsic.Control.Elseif(V.Screen.Form1!txtWO.Text,=,V.Screen.Form1!txtEndJob.Text,"AND",V.Screen.Form1!txtWC.Text,=,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix = '",V.Local.sBJobSuf,"' and MACHINE ='",V.Screen.Form1!txtWC.Text,"' and CHARGE_DATE BETWEEN'",V.Local.sDate,"'and'",V.Local.eDate,"'",V.Local.sSql)
+	F.Intrinsic.Control.ElseIf(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text,"AND",V.Screen.Form1!txtWO.Text,=,V.Screen.Form1!txtEndJob.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix = '",V.Local.sBJobSuf,"' and MACHINE between'",V.Screen.Form1!txtWC.Text,"'and'",V.Screen.Form1!txtEndWC.Text,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+
+
+
+
+'if employee textbox is empty and all dates checked and all WC's NOT checked
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!txtWC.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,<>,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"MACHINE")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"MACHINE")
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE between '",V.Screen.Form1!txtWC.Text,"' and '",V.Screen.Form1!txtEndWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE ='",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE between '",V.Screen.Form1!txtWC.Text,"' and '",V.Screen.Form1!txtEndWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL where JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and MACHINE ='",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'if all dates NOT checked ,all jobs is checked and WC range selected
+F.Intrinsic.Control.if(V.Screen.Form1!chkAllDates.Value,<>,1,"AND",V.Screen.Form1!txtWC.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,=,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"MACHINE")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"MACHINE")
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker1.Value,"yyyy-mm-dd",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker2.Value,"yyyy-mm-dd",V.Local.eDate)
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE  CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and MACHINE between '",V.Screen.Form1!txtWC.Text,"' and '",V.Screen.Form1!txtEndWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and MACHINE = '",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and MACHINE = '",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and MACHINE = '",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'if all dates i checked ,all jobs is checked and WC range selected
+F.Intrinsic.Control.if(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!txtWC.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,=,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"MACHINE")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"MACHINE")
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker1.Value,"yyyy-mm-dd",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker2.Value,"yyyy-mm-dd",V.Local.eDate)
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE MACHINE between '",V.Screen.Form1!txtWC.Text,"' and '",V.Screen.Form1!txtEndWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE MACHINE = '",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWC.Text,<>,V.Screen.Form1!txtEndWC.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE MACHINE = '",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,MACHINE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE MACHINE = '",V.Screen.Form1!txtWC.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+
+'if emloyee range selected,all dates IS checked and All employees NOT checked then selection by employee range
+F.Intrinsic.Control.if(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!txtEmp.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,<>,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"EMPL")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"EMPLOYEE")
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and EMPL BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and EMPL= '",V.Screen.Form1!txtEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT JOB + '-' + SUFFIX as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and EMPLOYEE BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and EMPL = '",V.Screen.Form1!txtEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'if all dates not checked,employee range selected and all jobs checked
+F.Intrinsic.Control.if(V.Screen.Form1!chkAllDates.Value,<>,1,"AND",V.Screen.Form1!txtEmp.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,=,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"EMPL")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"EMPLOYEE")
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker1.Value,"yyyy-mm-dd",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker2.Value,"yyyy-mm-dd",V.Local.eDate)
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPL BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE  CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPL = '",V.Screen.Form1!txteMP.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPLOYEE BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.intrinsic.control.else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPLOYEE = '",V.Screen.Form1!txteMP.Text,"'",V.Local.sSql)
+	F.intrinsic.control.endif
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'if all dates not checked,employee range selected and all jobs not checked
+F.Intrinsic.Control.if(V.Screen.Form1!chkAllDates.Value,<>,1,"AND",V.Screen.Form1!txtEmp.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,<>,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"EMPL")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"EMPLOYEE")
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker1.Value,"yyyy-mm-dd",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker2.Value,"yyyy-mm-dd",V.Local.eDate)
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPL BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPL = '",V.Screen.Form1!txteMP.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPLOYEE BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.intrinsic.control.else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE JobSuffix between '",V.Local.sBJobSuf,"' AND '",V.Local.sEJobSuf,"' and CHARGE_DATE BETWEEN '",V.Local.sDate,"' and '",V.Local.eDate,"' and EMPLOYEE = '",V.Screen.Form1!txteMP.Text,"'",V.Local.sSql)
+	F.intrinsic.control.endif
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'all dates,all jobs checked, and employee range selected
+F.Intrinsic.Control.if(V.Screen.Form1!chkAllDates.Value,=,1,"AND",V.Screen.Form1!txtEmp.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.Form1!chkAllJobs.Value,=,1)
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"EMPL")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"EMPLOYEE")
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker1.Value,"yyyy-mm-dd",V.Local.sDate)
+	F.Intrinsic.String.Format(V.Screen.Form1!datepicker2.Value,"yyyy-mm-dd",V.Local.eDate)
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE EMPL BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPL,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_DETAIL WHERE EMPL = '",V.Screen.Form1!txteMP.Text,"'",V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOs",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.If(V.Screen.Form1!txtEmp.Text,<>,V.Screen.Form1!txtEndEmp.Text)
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE EMPLOYEE BETWEEN '",V.Screen.Form1!txteMP.Text,"' AND '",V.Screen.Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.intrinsic.control.else
+		F.Intrinsic.String.Concat("SELECT RTRIM(LTRIM(JOB)) + '-' + RTRIM(LTRIM(SUFFIX)) as JobSuffix,SEQ,EMPLOYEE,CHARGE_DATE,HOURS_WORKED,AMOUNT_LABOR,AMT_OVERHEAD FROM V_JOB_HIST_DTL WHERE EMPLOYEE = '",V.Screen.Form1!txteMP.Text,"'",V.Local.sSql)
+	F.intrinsic.control.endif
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uWOHist",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+
+
+
+
+'check to see if there are any records before printing report, if no records then return to screen
+F.Intrinsic.Control.If(V.uGlobal.uWOs.UBound,=,-1,"AND",V.uGlobal.uWOHist.UBound,=,-1)
+	F.Intrinsic.UI.Msgbox("No Records in this Selection","No Records",0,V.Local.iRet)
+	Gui.Form1..Show
+	F.Intrinsic.Control.exitsub
+F.Intrinsic.Control.Else
+'setting field references and saving to BI Table for Crystal Report
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!EMP_WC,"EMP_WC")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!AMT_LABOR,"AMT_LABOR")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOs!BIRUNID,"BIRUNID")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!EMP_WC,"EMP_WC")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!AMT_LABOR,"AMT_LABOR")
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uWOHist!BIRUNID,"BIRUNID")
+
+	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uWOs!BIRUNID,V.Global.iBIRunID)
+	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uWOHist!BIRUNID,V.Global.iBIRunID)
+
+	F.ODBC.Connection!conX.OpenLocalRecordsetRW("RST","SELECT * FROM GCG_3960_BI_LBR_DTL")
+	F.Intrinsic.Control.If(V.uGlobal.uWOHist.UBound,<>,-1)
+		F.Intrinsic.Variable.SaveUDTToRecordset("CONX","RST"," v.uGlobal.uwohist")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.uGlobal.uWOs.UBound,<>,-1)
+		F.Intrinsic.Variable.SaveUDTToRecordset("CONX","RST","V.uGlobal.uwos")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.endif
+
+F.ODBC.conX!rst.Close
+'F.Intrinsic.Debug.Stop
+
+F.Global.BI.StopLogging(V.Global.iBILogID)
+F.Intrinsic.Control.CallSub(Callbi)
+F.Intrinsic.Control.CallSub(Unload)
+	
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Print_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Print.End
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iRet.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sParamValues.Declare(String)
+
+V.Local.sParams.Set("sDate*!*eDate*!*EmpWC*!*JOBS*!*EmpOrWC")
+F.Intrinsic.string.concat(V.Global.sDate,"*!*",V.Global.eDate,"*!*",V.Global.SEMPWC,"*!*",V.Global.SJOBS,"*!*",V.Global.sEorW,V.Local.sParamValues)
+F.Intrinsic.Debug.DumpVariableList
+F.Global.BI.RunReportPreProcessor(V.Global.iBIRunID,V.Global.iBILogID,V.Local.sParams,V.Local.sParamValues,"",-1,True,"",-1,"",-1,"","",V.Local.iRet)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.CallBI.End
+
+program.sub.cmdbrwsendjob_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdbrwsendjob_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sRet.Declare(String)
+Variable.Local.sTitles.Declare(String)
+Variable.Local.iWidths.Declare(Long)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+Function.Intrinsic.String.Split("Job*!*Suffix*!*Part*!*Description","*!*",V.Local.sTitles)
+Function.Intrinsic.String.Split("1000*!*800*!*2000*!*3000","*!*",V.Local.iWidths)
+F.Intrinsic.UI.Browser("Select a Job","conX","select distinct job,suffix,part,description from v_job_header union select distinct job,suffix,part, description from v_job_hist_mast",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtEndJob.Text(V.Local.sRet(0))
+	Gui.Form1.txtEndSuf.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdbrwsendjob_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdbrwsendjob_click.end
+
+program.sub.cmdendwc_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdendwc_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+Function.Intrinsic.UI.Browser(400,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+'F.Intrinsic.Debug.Stop
+
+	Gui.Form1.txtEmp.Text("")
+	Gui.Form1.txtEndEmp.Text("")
+	Gui.Form1.txtEndWC.Text(V.Local.sRet(0).Trim)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdendwc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdendwc_click.end
+
+program.sub.txtseq_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtseq_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuf.Declare(String)
+V.Local.sSql.Declare(String)
+
+V.Local.sJob.Set(V.Screen.Form1!txtWO.Text)
+V.Local.sSuf.Set(V.Screen.Form1!txtSeq.Text)
+
+F.Intrinsic.Control.If(V.Local.sJob.Trim,<>,"")
+	F.Intrinsic.String.Concat("select distinct job,suffix from v_job_header where job = '",V.Local.sJob.Trim,"' and suffix = '",V.Local.sSuf.Trim,"'",V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+'		Gui.Form1.txtWO.Text(V.ODBC.conX!rst.FieldValTrim!job)
+		Gui.Form1.txtEndJob.Text(V.ODBC.conX!rst.FieldValTrim!job)
+'		Gui.Form1.txtSeq.Text(V.ODBC.conX!rst.FieldValTrim!suffix)
+		Gui.Form1.txtEndSuf.Text(V.ODBC.conX!rst.FieldValTrim!suffix)
+		Gui.Form1.txtEndSuf.SetFocus
+		F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.Else
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.String.Concat("select distinct job,suffix from v_job_hist_mast where job = '",V.Local.sJob.Trim,"' and suffix = '",V.Local.sSuf.Trim,"'",V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			Gui.Form1.txtEndJob.Text(V.ODBC.conX!rst.FieldValTrim!job)
+			Gui.Form1.txtEndSuf.Text(V.ODBC.conX!rst.FieldValTrim!suffix)
+			Gui.Form1.txtEndSuf.SetFocus
+			F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Concat(V.Local.sJob," - ",V.Local.sSuf," is not a valid Work Order, Please select a Valid Work Order",V.Local.sRet)
+			F.Intrinsic.UI.Msgbox(V.Local.sRet,"Invalid Work Order")
+			F.ODBC.conX!rst.Close
+			F.Intrinsic.Control.CallSub(Cmdwobrowse_click)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtseq_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtseq_lostfocus.end
+
+program.sub.txtemp_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtemp_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sEmp.Declare(String)
+
+V.Local.sEmp.Set(V.Screen.Form1!txtEmp.Text)
+
+F.Intrinsic.Control.If(V.Local.sEmp.Trim,<>,"")
+	F.Intrinsic.String.Concat("select distinct employee from v_employee_mstr where employee = '",V.Local.sEmp.Trim,"'",V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,True)
+		F.Intrinsic.String.Concat(V.Local.sEmp," is NOT a Valid Employee, Please Select a Valid Employee",V.Local.sRet)
+		F.Intrinsic.UI.Msgbox(V.Local.sRet,"Invalid Employee")
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.CallSub(Cmdempbrws_click)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+'		Gui.Form1.txtEmp.Text(V.ODBC.conX!rst.FieldValLTrim!employee)
+		Gui.Form1.txtEndEmp.Text(V.ODBC.conX!rst.FieldValTrim!employee)
+		Gui.Form1.txtWC.Text("")
+		Gui.Form1.txtEndWC.Text("")
+		Gui.Form1.txtEndEmp.SetFocus
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtemp_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtemp_lostfocus.end
+
+program.sub.txtwc_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtwc_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sMachine.Declare(String)
+V.Local.sSql.Declare(String)
+
+V.Local.sMachine.Set(V.Screen.Form1!txtWC.Text)
+
+F.Intrinsic.Control.If(V.Local.sMachine.Trim,<>,"")
+	F.Intrinsic.String.Concat("select distinct Machine from v_workcenters where machine = '",V.Local.sMachine.Trim,"'",V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+'		Gui.Form1.txtWC.Text(V.ODBC.conX!rst.FieldValTrim!machine)
+		Gui.Form1.txtEndWC.Text(V.ODBC.conX!rst.FieldValTrim!machine)
+		Gui.Form1.txtEmp.Text("")
+		Gui.Form1.txtEndEmp.Text("")
+		Gui.Form1.txtEndWC.SetFocus
+		F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.Else
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.String.Concat(V.Local.sMachine," is NOT a Valid Workcenter, Please Select a Valid Workcenter",V.Local.sRet)
+		F.Intrinsic.ui.Msgbox(V.Local.sRet,"Invalid Workcenter")
+		F.Intrinsic.Control.CallSub(Cmdwcbrws_click)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtwc_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtwc_lostfocus.end
+
+program.sub.datepicker1_lostfocus.start
+Gui.Form1.datepicker2.Value(V.Screen.Form1!datepicker1.Value)
+
+
+program.sub.datepicker1_lostfocus.end
+
+program.sub.cmdclear_click.start
+Gui.Form1.txtEmp.Text("")
+Gui.Form1.txtEndEmp.Text("")
+Gui.Form1.txtEndJob.Text("")
+Gui.Form1.txtEndSuf.Text("")
+Gui.Form1.txtEndWC.Text("")
+Gui.Form1.txtSeq.Text("")
+Gui.Form1.txtWC.Text("")
+Gui.Form1.txtWO.Text("")
+Gui.Form1.txtWO.SetFocus
+Gui.Form1.chkAllDates.Value(0)
+Gui.Form1.chkAllEmps.Value(0)
+Gui.Form1.chkAllJobs.Value(0)
+Gui.Form1.chkAllWC.Value(0)
+
+F.Intrinsic.Control.ExitSub
+
+
+program.sub.cmdclear_click.end
+
+program.sub.cmdendemployee_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdendemployee_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+Function.Intrinsic.UI.Browser(50,,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtWC.Text("")
+	Gui.Form1.txtEndWC.Text("")
+	Gui.Form1.txtEndEmp.Text(V.Local.sRet(0).Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdendemployee_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdendemployee_click.end
+
+program.sub.chkalljobs_click.start
+F.Intrinsic.Control.SetErrorHandler("chkalljobs_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllJobs.Value,=,1)
+	Gui.Form1.txtWO.Text("")
+	Gui.Form1.txtSeq.Text("")
+	Gui.Form1.txtEndJob.Text("")
+	Gui.Form1.txtEndSuf.Text("")
+	Gui.Form1.txtWO.Enabled(false)
+	Gui.Form1.txtSeq.Enabled(false)
+	Gui.Form1.txtEndJob.Enabled(false)
+	Gui.Form1.txtEndSuf.Enabled(false)
+	Gui.Form1.cmdBrwsEndJob.Enabled(false)
+	Gui.Form1.cmdWOBrws.Enabled(false)
+F.Intrinsic.Control.Else
+	Gui.Form1.txtWO.Enabled(true)
+	Gui.Form1.txtSeq.Enabled(true)
+	Gui.Form1.txtEndJob.Enabled(true)
+	Gui.Form1.txtEndSuf.Enabled(true)
+	Gui.Form1.cmdBrwsEndJob.Enabled(true)
+	Gui.Form1.cmdWOBrws.Enabled(true)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkalljobs_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chkalljobs_click.end
+
+program.sub.chkallemps_click.start
+F.Intrinsic.Control.SetErrorHandler("chkallemps_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllEmps.Value,=,1,"OR",V.Screen.Form1!chkAllWC.Value,=,1)
+	Gui.Form1.txtEmp.Text("")
+	Gui.Form1.txtEndEmp.Text("")
+	Gui.Form1.txtEmp.Enabled(false)
+	Gui.Form1.txtEndEmp.Enabled(false)
+	Gui.Form1.cmdEmpBrws.Enabled(false)
+	Gui.Form1.cmdEndEmployee.enabled(false)
+	Gui.Form1.txtWC.Text("")
+	Gui.Form1.txtEndWC.Text("")
+	Gui.Form1.txtWC.Enabled(false)
+	Gui.Form1.txtEndWC.Enabled(false)
+	Gui.Form1.cmdWCBrws.Enabled(false)
+	Gui.Form1.cmdEndWC.Enabled(false)
+	Gui.Form1.chkAllWC.Value(0)
+	Gui.Form1.chkAllWC.Enabled(false)
+F.Intrinsic.Control.Else
+	Gui.Form1.chkAllWC.Enabled(true)
+	Gui.Form1.txtEmp.Enabled(true)
+	Gui.Form1.txtEndEmp.Enabled(true)
+	Gui.Form1.txtWC.Enabled(true)
+	Gui.Form1.txtEndWC.Enabled(true)
+	Gui.Form1.txtWC.Enabled(true)
+	Gui.Form1.txtEndWC.Enabled(true)
+	Gui.Form1.cmdWCBrws.Enabled(true)
+	Gui.Form1.cmdEndWC.Enabled(true)
+	Gui.Form1.cmdEmpBrws.Enabled(true)
+	Gui.Form1.cmdEndEmployee.Enabled(true)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkallemps_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chkallemps_click.end
+
+program.sub.chkallwc_click.start
+F.Intrinsic.Control.SetErrorHandler("chkallwc_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllWC.Value,=,1,"OR",V.Screen.Form1!chkAllEmps.Value,=,1)
+	Gui.Form1.txtWC.Text("")
+	Gui.Form1.txtEndWC.Text("")
+	Gui.Form1.txtWC.Enabled(false)
+	Gui.Form1.txtEndWC.Enabled(false)
+	Gui.Form1.txtEmp.Text("")
+	Gui.Form1.txtEndEmp.Text("")
+	Gui.Form1.txtEndEmp.Enabled(false)
+	Gui.Form1.txtEmp.Enabled(false)
+	Gui.Form1.chkAllEmps.Value(0)
+	Gui.Form1.chkAllEmps.Enabled(false)
+	Gui.Form1.cmdWCBrws.Enabled(false)
+	Gui.Form1.cmdEndWC.Enabled(false)
+	Gui.Form1.cmdEmpBrws.Enabled(false)
+	Gui.Form1.cmdEndEmployee.Enabled(false)
+F.Intrinsic.Control.Else
+	Gui.Form1.chkAllEmps.Enabled(true)
+	Gui.Form1.txtWC.Enabled(true)
+	Gui.Form1.txtEndWC.Enabled(true)
+	Gui.Form1.txtEmp.Enabled(true)
+	Gui.Form1.txtEndEmp.Enabled(true)
+	Gui.Form1.cmdEmpBrws.Enabled(true)
+	Gui.Form1.cmdEndEmployee.Enabled(true)
+	Gui.Form1.cmdWCBrws.Enabled(true)
+	Gui.Form1.cmdEndWC.Enabled(true)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkallwc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chkallwc_click.end
+
+program.sub.txtendsuf_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtendsuf_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuf.Declare(String)
+V.Local.sSql.Declare(String)
+
+V.Local.sJob.Set(V.Screen.Form1!txtEndJob.Text)
+V.Local.sSuf.Set(V.Screen.Form1!txtendsuf.Text)
+
+F.Intrinsic.Control.If(V.Local.sJob.Trim,<>,"")
+	F.Intrinsic.String.Concat("select distinct job,suffix from v_job_header where job = '",V.Local.sJob.Trim,"' and suffix = '",V.Local.sSuf.Trim,"'",V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+'		Gui.Form1.txtEndJob.Text(V.ODBC.conX!rst.FieldValTrim!job)
+'		Gui.Form1.txtEndSuf.Text(V.ODBC.conX!rst.FieldValTrim!suffix)
+		F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.Else
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.String.Concat("select distinct job,suffix from v_job_hist_mast where job = '",V.Local.sJob.Trim,"' and suffix = '",V.Local.sSuf.Trim,"'",V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Concat(V.Local.sJob," - ",V.Local.sSuf," is not a valid Work Order, Please select a Valid Work Order",V.Local.sRet)
+			F.Intrinsic.UI.Msgbox(V.Local.sRet,"Invalid Work Order")
+			F.ODBC.conX!rst.Close
+			F.Intrinsic.Control.CallSub(Cmdbrwsendjob_click)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtendsuf_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtendsuf_lostfocus.end
+
+program.sub.txtendemp_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtendemp_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sEmp.Declare(String)
+
+V.Local.sEmp.Set(V.Screen.Form1!txtendEmp.Text)
+
+F.Intrinsic.Control.If(V.Local.sEmp.Trim,<>,"")
+	F.Intrinsic.String.Concat("select distinct employee from v_employee_mstr where employee = '",V.Local.sEmp.Trim,"'",V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,True)
+		F.Intrinsic.String.Concat(V.Local.sEmp," is NOT a Valid Employee, Please Select a Valid Employee",V.Local.sRet)
+		F.Intrinsic.UI.Msgbox(V.Local.sRet,"Invalid Employee")
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.CallSub(Cmdendemployee_click)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+'		Gui.Form1.txtEndEmp.Text(V.ODBC.conX!rst.FieldValTrim!employee)
+		Gui.Form1.txtWC.Text("")
+		Gui.Form1.txtEndWC.Text("")
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtendemp_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtendemp_lostfocus.end
+
+program.sub.txtendwc_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtendwc_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sRet.Declare(String)
+V.Local.sMachine.Declare(String)
+V.Local.sSql.Declare(String)
+
+V.Local.sMachine.Set(V.Screen.Form1!txtendWC.Text)
+
+F.Intrinsic.Control.If(V.Local.sMachine.Trim,<>,"")
+	F.Intrinsic.String.Concat("select distinct Machine from v_workcenters where machine = '",V.Local.sMachine.Trim,"'",V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+'		Gui.Form1.txtEndWC.Text(V.ODBC.conX!rst.FieldValTrim!machine)
+		Gui.Form1.txtEmp.Text("")
+		Gui.Form1.txtEndEmp.Text("")
+		F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.Else
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.String.Concat(V.Local.sMachine," is NOT a Valid Workcenter, Please Select a Valid Workcenter",V.Local.sRet)
+		F.Intrinsic.ui.Msgbox(V.Local.sRet,"Invalid Workcenter")
+		F.Intrinsic.Control.CallSub(Cmdendwc_click)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtendwc_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3960_LABOR_DTL_RPT.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.txtendwc_lostfocus.end
+
+Program.Sub.Comments.Start
+${$0$}$GCG_LABOR_DTL_RPT$}$SFF$}$5/21/2014
+Program.Sub.Comments.End
+
